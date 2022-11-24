@@ -1,0 +1,42 @@
+
+.container__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.container__header__list-nav{    
+    font-family: 'Oswald';
+    display: flex;
+    li{
+        padding: 5px;
+        margin: 5px;
+    }
+    a{
+        font-weight: 1000;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 14px;
+    }
+}
+.container__header__user-components{
+    display: flex;
+    align-items: center;
+    li{
+        margin-right: 10px;
+        font-size: 14px;
+    }
+}
+.basket{
+    display: flex;
+    width: 130px;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    margin: 0;
+    border: 3px solid white;
+    padding: 2px;
+    box-shadow: 5px -5px 0px 0px white;
+
+}

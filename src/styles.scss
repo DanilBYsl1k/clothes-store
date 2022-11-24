@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Oswald';
+    src: url(./assets/fonts/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+h1{
+    font-family: 'Oswald';
+}
+h2{
+    font-family: 'Oswald';
+}
+h3{
+    font-family: 'Oswald';
+}
+h4{
+    font-family: 'Oswald';
+}
+h5{
+    font-family: 'Oswald';
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.container{
+    width: 1210px;
+    margin: auto;
+    outline: 1px solid red;
+}
