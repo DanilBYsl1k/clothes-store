@@ -1,1 +1,23 @@
-<p>login works!</p>
+<section>
+    <ul class="login__bread-crums">
+        <li>Home/</li>
+        <li>Login Account</li>
+   </ul>
+   <h1>SIGN IN</h1>
+   <div class="form-login">
+    <form [formGroup]="form">
+        <h2>Personal Information</h2>
+        <div class="form-login__box-input">
+            <label for="email">First name<input formControlName="email" id="email" type="text" placeholder="email@.com"></label>
+            <label for="password">Password<input formControlName="password" id="password" type="password" placeholder="******"></label>
+        </div>
+        <div class="form-login__btns" >
+            <div class="sign__new">
+                <button [disabled]="this.form.invalid" type="submit" class="btn-form black__btn" (click)="login()">SIGN IN</button>
+                <button class="Create__new" routerLink="/Register">Create new Account</button>
+            </div>
+            <button class="btn-back" routerLink="../">back</button>
+        </div>
+    </form>
+</div>
+</section>

@@ -1,18 +1,32 @@
 <div class="container container__header">
     <h1 class="logo">CRISP</h1>
+    <div class="desctop" [class.active]="phoneMenu">
+        <!-- [class.active]='phoneMenu==true' -->
     <nav>
-        <ul class="container__header__list-nav">
-            <li><a>home</a></li>
+        <ul class="container__header__list-nav" (click)="phoneMenu=!phoneMenu">
+            <li routerLink="/home"><a>home</a></li>
             <li><a>Shop</a></li>
             <li><a>blog</a></li>
             <li><a>Sale</a></li>
             <li><a>contact us</a></li>
         </ul>
     </nav>
-    <ul class="container__header__user-components">
-        <li><p>SIGN IN</p></li>
-        <li><p>CREATE AN ACCOUNT</p></li>
-        <li><img src="assets/image/header/heart.svg" alt=""></li>
-        <li class="basket"><img src="assets/image/header/Basket_goods.svg" alt=""><p>Shopping Cart<br><span>0,00</span></p></li>
+    <ul class="container__header__user-components" (click)="phoneMenu=!phoneMenu">
+        <!--  -->
+        <div *ngIf="register$|async" class="for-phone-adaptiv">
+            <li ><a routerLink="Login">SIGN IN</a></li>
+            <li ><a routerLink="Register">CREATE AN ACCOUNT</a></li>
+        </div>
+        <li (click)="logout()" *ngIf="logout$|async"><a>Logout</a></li>
+        <div class="for-phone-adaptiv">
+            <li><img src="assets/image/header/heart.svg" alt=""></li>
+            <li class="basket"><img src="assets/image/header/Basket_goods.svg" alt=""><p>Shopping Cart<br><span>0,00</span></p></li>
+        </div>
     </ul>
+    </div>
+    <div class="container__header__burger__menu" (click)="phoneMenu=!phoneMenu" >
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </div>

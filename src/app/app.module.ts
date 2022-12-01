@@ -9,33 +9,37 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { HeaderComponent } from './UI/header/header.component';
 import { FooterComponent } from './UI/footer/footer.component';
-import {  } from '@angular/fire'
+//
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+//
 import { FormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
+import { RegisterEffect } from './auth/reduce/effect/registerEffect';
+
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent
-  ],
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    FormsModule,
+
+
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
 
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    
-
-    FormsModule,
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideAuth(() => getAuth()),
   ],
-  providers: [],
+  providers: [ { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

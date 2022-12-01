@@ -36,7 +36,26 @@ ul{
     list-style: none;
 }
 .container{
-    width: 1210px;
+    width: 1200px;
     margin: auto;
-    outline: 1px solid red;
+    
+}
+.black__btn{
+    padding: 10px;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    background: #000000;
+}
+@media (max-width:1199px) {
+    .container{
+        width: 100%;
+        padding: 0 20px;
+    }
 }

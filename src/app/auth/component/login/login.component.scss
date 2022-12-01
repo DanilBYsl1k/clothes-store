@@ -1,0 +1,94 @@
+.login__bread-crums{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    color: #828282;
+    font-weight: 400;
+    font-size: 14px;
+}
+h1{
+    text-align: center;
+    font-weight: 400;
+    font-size: 48px;
+    margin: 10px 0;
+}
+.form-login{
+    max-width: 1100px;
+    margin: auto;
+    border: 1px solid #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-login__box-input{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    label{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 600px;
+        margin: 10px 0; 
+        input{
+            outline: none;
+            border: 1px solid grey;
+            padding: 10px;
+            width: 440px;
+            &:focus{
+                border: 1px solid black;
+            }
+        }
+    }
+}
+.form-login__btns{
+    display: flex;
+    justify-content: space-between;
+    margin:20px 0;
+}
+.sign__new{
+    display: flex;
+}
+.Create__new{
+    border: none;
+    background: transparent;
+    color: #828282;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Oswald';
+}
+.btn-back{
+    border: none;
+    background: transparent;
+    color: #828282;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Oswald';
+}
+.btn-form{
+    transition: 0.5s ease;
+    &:disabled{
+        background: rgb(78, 77, 77);
+    }
+}
+@media (max-width:650px) {
+    h1{
+        font-size: 25px;
+    }
+    form{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .form-login__box-input{
+        width: 100%;
+        label{
+            width: 100%;
+            flex-direction: column;
+            input{
+                width: 100%;
+            }
+        }
+    }
+}

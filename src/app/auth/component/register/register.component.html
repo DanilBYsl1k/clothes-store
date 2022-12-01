@@ -1,1 +1,24 @@
-<p>register works!</p>
+<section class="register">
+   <ul class="register__bread-crums">
+        <li>Home/</li>
+        <li>Create New Customer Account</li>
+   </ul>
+   <h1>Create New Customer Account</h1>
+   <div class="form-register">
+        <form [formGroup]="form">
+            <h2>Personal Information</h2>
+            <div class="form-register__box-input">
+                <label for="email"><p>First name</p><input formControlName="email" id="email" type="text" placeholder="email@.com"></label>
+                <label for="password"><p>Password</p><input formControlName="password" id="password" type="password" placeholder="******"></label>
+            </div>
+            <div class="err"  *ngIf=this.disBtn$|async>
+                <p>!Uncorrect email</p>
+            </div>
+            <div class="form-register__btns">
+                <button [disabled]="this.form.invalid"  type="submit" class="btn-form black__btn" (click)="register()">create an account</button>
+                <button class="btn-back" routerLink="../">back</button>
+            </div>
+            
+        </form>
+   </div>
+</section>
