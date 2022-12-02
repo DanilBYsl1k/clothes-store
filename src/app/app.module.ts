@@ -19,6 +19,7 @@ import { RegisterEffect } from './auth/reduce/effect/registerEffect';
 
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { FeedModule } from './feed/feed.module';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { FeedModule } from './feed/feed.module';
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
+    provideFirestore(() => getFirestore()),
 
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideAuth(() => getAuth()),
