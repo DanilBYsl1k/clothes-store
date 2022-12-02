@@ -18,6 +18,7 @@ import { AuthModule } from './auth/auth.module';
 import { RegisterEffect } from './auth/reduce/effect/registerEffect';
 
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { FeedModule } from './feed/feed.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    FeedModule,
     FormsModule,
 
 

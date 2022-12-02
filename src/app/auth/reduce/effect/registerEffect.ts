@@ -17,7 +17,7 @@ export class RegisterEffect{
         map((request)=>{
             this.authService.register(request.request.email, request.request.password)
             if(this.authService.authBoolean){
-                this.router.navigate([''])
+                this.router.navigate(['/main-page'])
                 return authActionSuccess({answer:request.request})
             }
             else{

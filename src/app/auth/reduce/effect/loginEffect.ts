@@ -15,7 +15,7 @@ export class LoginEffect{
         map((request)=>{
             this.authService.login(request.request.email, request.request.password)
             if(this.authService.authBoolean){
-                this.router.navigate([''])
+                this.router.navigate(['/main-page'])
                 return loginActionSuccess({answer:request.request})
             }
             else{
