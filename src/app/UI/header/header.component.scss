@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    z-index: 5;
 }
 a{
     font-weight: 1000;
@@ -50,16 +51,7 @@ a{
     box-shadow: 5px -5px 0px 0px white;
 }
 
-@media (max-width:850px) {
-    h1{
-        font-size: 32px;
-    }
-    .container__header{
-        a{
-            font-size: 11px;
-        }
-    }
-}
+
 .container__header__burger__menu{
     display: none;
     width: 30px;
@@ -102,6 +94,16 @@ a{
     }
     .container__header__user-components{
         flex-direction: column;
+    }
+}
+@media (max-width:850px) {
+    h1{
+        font-size: 32px;
+    }
+    .container__header{
+        a{
+            font-size: 11px;
+        }
     }
 }
 .active{

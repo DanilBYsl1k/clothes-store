@@ -1,7 +1,6 @@
 <div class="container container__header">
     <h1 class="logo">CRISP</h1>
     <div class="desctop" [class.active]="phoneMenu">
-        <!-- [class.active]='phoneMenu==true' -->
     <nav>
         <ul class="container__header__list-nav" (click)="phoneMenu=!phoneMenu">
             <li routerLink="/main-page"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><a >home</a></li>

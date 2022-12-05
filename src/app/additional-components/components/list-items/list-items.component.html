@@ -1,1 +1,7 @@
-<p>list-items works!</p>
+<!-- <p>list-items works!</p> -->
+<div *ngFor="let i of cardsList$|async">
+    <p>{{i.id}}</p>
+    <img src={{i.image}} alt="">
+    <!-- <img src="assets/image/catalog-cards/Clothess with glitters.png" alt=""> -->
+    
+</div>

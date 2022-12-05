@@ -5,7 +5,7 @@ import { InitialState } from '../types/initialState'
 import { getCardsAction, getCardsActionFailure, getCardsActionSuccess } from './action/getCartAction'
 
 const InitialState:InitialState={
-    items: null,
+    items: [],
     err: null,
     loading: null
 }
@@ -15,7 +15,7 @@ const additionReducer=createReducer(
         getCardsAction,
         (state)=>({
             ...state,
-            items:null,
+            items:[],
             loading:false
         })
     ),

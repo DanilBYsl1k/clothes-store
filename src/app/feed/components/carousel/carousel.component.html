@@ -1,0 +1,15 @@
+<div class="section__carousel">
+    <div class="component-carousel">
+        <div class="carousel__offer">
+                <img src="assets/image/main-page/slider-offer({{this.count}}).png" alt="">
+                <button>shop now</button>
+        </div>
+        <div class="carousel-img">
+            <div class="first__img" [class.active-img]="count==1"><img  src="assets/image/main-page/slider-elem(1).png" alt=""></div>
+            <div class="second__img" [class.active-img]="count==2"><img  src="assets/image/main-page/slider-elem(2).png" alt=""></div>
+        </div>
+    </div>
+    <div class="carousel__btn">
+        <button [disabled]="this.count==1" (click)="math(2)"><</button>
+        <button [disabled]="this.count==2" (click)="math(1)">></button></div>
+</div>
