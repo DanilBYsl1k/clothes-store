@@ -18,3 +18,7 @@ export const loadingSelector=createSelector(
     FeatureSelector,
     (state:InitialState)=>state.loading
 )
+export const preloaderSelector=createSelector(
+    FeatureSelector,
+    (state:InitialState)=>state.preloader
+)

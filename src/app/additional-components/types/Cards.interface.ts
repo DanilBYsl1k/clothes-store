@@ -3,4 +3,7 @@ export interface Icard{
     name:string
     image:string
     price:number
+    color:string[]
+    brand:string
+    size:string[]
 }

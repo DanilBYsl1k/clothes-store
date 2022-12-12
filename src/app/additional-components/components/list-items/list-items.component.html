@@ -1,7 +1,15 @@
 <!-- <p>list-items works!</p> -->
-<div *ngFor="let i of cardsList$|async">
-    <p>{{i.id}}</p>
-    <img src={{i.image}} alt="">
-    <!-- <img src="assets/image/catalog-cards/Clothess with glitters.png" alt=""> -->
-    
+<div class="list-cards">
+    <div class="cart" *ngFor="let card of cardsList$|async; let b=index" >
+        <div *ngIf="this.quatityCards>b">
+            <img src={{card.image}} alt="">
+            <div class="info" >
+                <h2>TOP WOMEN</h2>
+                <h3 [routerLink]="['/card',card.id,card.name]" class="name" >{{card.name}}</h3>
+                <div class="color">
+                    <div class="box-color" *ngFor="let colors of card.color" [style.background-color]="'#'+colors"></div>
+                </div>  
+                <p class="price" >{{card.price}},00 EUR</p>
+            </div>
+    </div>
 </div>

@@ -2,12 +2,14 @@
 
 import { Action, createReducer, on } from '@ngrx/store'
 import { InitialState } from '../types/initialState'
+import { cardPageAction, cardPageFailureAction, cardPageSuccessAction } from './action/cardPageAction'
 import { getCardsAction, getCardsActionFailure, getCardsActionSuccess } from './action/getCartAction'
 
 const InitialState:InitialState={
     items: [],
     err: null,
-    loading: null
+    loading: false,
+    preloader: true,
 }
 const additionReducer=createReducer(
     InitialState,
@@ -16,7 +18,7 @@ const additionReducer=createReducer(
         (state)=>({
             ...state,
             items:[],
-            loading:false
+            loading:false,
         })
     ),
     on(
@@ -24,7 +26,8 @@ const additionReducer=createReducer(
         (state,action)=>({
             ...state,
             items:action.answer,
-            loading:true
+            loading:true,
+            preloader:false
         })
     ),
     on(
@@ -33,6 +36,31 @@ const additionReducer=createReducer(
             ...state,
             err:action.err,
             loading:false
+        })
+    ),
+    on(
+        cardPageAction,
+        (state)=>({
+            ...state,
+            items: [],
+            err: null,
+            loading: false,
+        })
+    ),
+    on(
+        cardPageSuccessAction,
+        (state,action)=>({
+            ...state,
+            items: action.answer,
+        })
+    ),
+    on(
+        cardPageFailureAction,
+        (state,action)=>({
+            ...state,
+            err: action.err,
+            loading: false,
+            preloader:true
         })
     )
 )

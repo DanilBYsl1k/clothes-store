@@ -1,0 +1,172 @@
+<section>
+    <div class="container-card-pages" >
+        <div class="img-container">
+            <div class="box-image" >
+                <img src="{{item.image}}" alt="">
+                <img src="{{item.image}}" alt="">
+                <img src="{{item.image}}" alt="">
+            </div>
+            <div class="main-photo">
+                <img src="{{item.image}}" alt="">
+            </div>
+        </div>
+        <div class="params-items">
+            <ul class="params-items__bread-crums">
+                <li>Home/</li>
+                <li>Womens Dress/</li>
+                <li>{{item.name}}</li>
+            </ul>
+            <p><span class="name-brand">{{item.brand}}</span></p>
+            <h2 class="name-card">{{item.name}}</h2>
+            <p class="title-p">Select Color</p>
+            <div class="color-card">
+                <div 
+                class="box-color" 
+                *ngFor="let colors of item.color" 
+                [style.background-color]="'#'+colors"
+                 (click)="activeColorFun(colors)" 
+                 [class.active-color]="activeColor==colors">
+                </div>
+            </div>
+            <div class="Select-size">
+                <p class="title-p">Select size (Inches)</p> 
+                <div class="size-box">
+                    <p 
+                    (click)="activeSizeFun(size)" 
+                    class="size" 
+                    *ngFor="let size of item.size" 
+                    [class.active-size]="activeSize==size"
+                    ><span>{{size}}</span></p>
+                </div>
+            </div>
+            <div class="Quantity-box">
+                <div class="Quantity-box__quantity">
+                    <p class="title-p">Quantity</p> 
+                    <div class="quantity">
+                        <button [disabled]="quantity==1" (click)="quantityFun('minus')">-</button>
+                        <span>{{quantity}}</span>
+                        <button (click)="quantityFun('plus')">+</button>
+                    </div>
+                </div>
+                <div class="Quantity-box__price-total">
+                    <p class="title-p">price total</p> 
+                    <p class="total-price">{{price}},00 EUR</p>
+                </div>
+            </div>
+            <div class="add-cart">
+                <button>Add to bag</button>
+                <button>Save</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-card__info">
+            <div class="title-card__info">
+                <h4 (click)="activeList(Details)" #Details>Details</h4>
+                <ul [class.active-list]="activeLi=='Details'" class="list">
+                    <li>
+                        <ul class="wrap-list">
+                            <h5>ADVANTAGES</h5>
+                            <li>Smocked body</li>
+                            <li>Adjustable straps</li>
+                            <li>Scoop neckline</li>
+                            <li>Ruffled hems</li>
+                            <li>Cropped length</li>
+                            <li>Model is wearing a small</li>
+                            <li>100% rayon</li>
+                            <li>Machine washable</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="more-info">
+                            <h5>SHIPPING</h5>
+                            <p>We offer Free Standard Shipping for all orders over $75 to the 50 states and the District of Columbia. The minimum order value must be $75 before taxes, shipping and handling. Shipping fees are non-refundable.
+                                Please allow up to 2 business days (excluding weekends, holidays, and sale days) to process your order.
+                                Processing Time + Shipping Time = Delivery Time
+                            </p>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="wrap-list">
+                            <h5>ADVANTAGES</h5>
+                            <li>Smocked body</li>
+                            <li>Adjustable straps</li>
+                            <li>Scoop neckline</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="title-card__info">
+                <h4 (click)="activeList(OtherInfo)" #OtherInfo>Other information</h4>
+                <ul [class.active-list]="activeLi=='Other information'" class="list">
+                    <li>
+                        <ul class="wrap-list">
+                            <h5>ADVANTAGES</h5>
+                            <li>Smocked body</li>
+                            <li>Adjustable straps</li>
+                            <li>Scoop neckline</li>
+                            <li>Ruffled hems</li>
+                            <li>Cropped length</li>
+                            <li>Model is wearing a small</li>
+                            <li>100% rayon</li>
+                            <li>Machine washable</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="more-info">
+                            <h5>SHIPPING</h5>
+                            <p>We offer Free Standard Shipping for all orders over $75 to the 50 states and the District of Columbia. The minimum order value must be $75 before taxes, shipping and handling. Shipping fees are non-refundable.
+                                Please allow up to 2 business days (excluding weekends, holidays, and sale days) to process your order.
+                                Processing Time + Shipping Time = Delivery Time
+                            </p>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="wrap-list">
+                            <h5>ADVANTAGES</h5>
+                            <li>Smocked body</li>
+                            <li>Adjustable straps</li>
+                            <li>Scoop neckline</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="title-card__info">
+                <h4 (click)="activeList(Another)" #Another>Another tab</h4>
+                <ul [class.active-list]="activeLi=='Another tab'" class="list">
+                    <li>
+                        <ul class="wrap-list">
+                            <h5>ADVANTAGES</h5>
+                            <li>Smocked body</li>
+                            <li>Adjustable straps</li>
+                            <li>Scoop neckline</li>
+                            <li>Ruffled hems</li>
+                            <li>Cropped length</li>
+                            <li>Model is wearing a small</li>
+                            <li>100% rayon</li>
+                            <li>Machine washable</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="more-info">
+                            <h5>SHIPPING</h5>
+                            <p>We offer Free Standard Shipping for all orders over $75 to the 50 states and the District of Columbia. The minimum order value must be $75 before taxes, shipping and handling. Shipping fees are non-refundable.
+                                Please allow up to 2 business days (excluding weekends, holidays, and sale days) to process your order.
+                                Processing Time + Shipping Time = Delivery Time
+                            </p>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="wrap-list">
+                            <h5>ADVANTAGES</h5>
+                            <li>Smocked body</li>
+                            <li>Adjustable straps</li>
+                            <li>Scoop neckline</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</section>
+

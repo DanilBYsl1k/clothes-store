@@ -69,6 +69,14 @@
     grid-template-areas: 
     "one three"
     "two three";
+    button{
+        transition: 0.2s ease;
+        &:hover{
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+        }
+    }
 }
 .sales__container__choose_look{
     background-color: #F3F0EF;
@@ -129,8 +137,34 @@
         border: 2px solid black;
     }
 }
-
-
+.list-cards{
+    margin-top: 20px;
+}
+.list-cards__container{
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: 10px;
+}
+.params{
+    border-right: 1px solid grey;
+}
+.btn__load__more{
+    display: flex;
+    justify-content: center;
+    button{
+        cursor: pointer;
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #828282;
+        background-color: transparent;
+        padding: 10px;
+        width: 150px;
+        border: 2px solid #828282;
+    }
+}
 @media (max-width:900px) {
     .sales__container{
         grid-template-columns: 1fr;

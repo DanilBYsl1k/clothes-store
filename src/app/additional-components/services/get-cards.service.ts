@@ -13,4 +13,7 @@ export class GetCardsService {
   getCards():Observable<Icard[]>{
     return this.http.get<Icard[]>(this.baseUrl)
   }
+  getCard(number:number|string):Observable<Icard[]>{
+    return this.http.get<Icard[]>(`https://database-634d4-default-rtdb.europe-west1.firebasedatabase.app/catalog/${number}/.json`)
+  }
 }

@@ -25,14 +25,14 @@
             <div class="sales__container__choose_look__text sales__container__text">
                 <h2>choosе your look</h2>
                 <p>See our clothing collections</p>
-                <button>see offers</button>
+                <button routerLink="/shop">see offers</button>
             </div>
         </div>
         <div class="sales__container__new_style">
             <div class="sales__container__new_style__text sales__container__text">
                 <h2>brand new style</h2>
                 <p>Popular clothing brands</p>
-                <button>see offers</button>
+                <button routerLink="/shop">see offers</button>
             </div>
             <img src="assets/image/main-page/new.png" alt="">
         </div>
@@ -40,14 +40,20 @@
             <div class="sales__container__sales__text sales__container__text">
                 <h2>Up to 40% off</h2>
                 <p>Special offers and great deals</p>
-                <button>see offers</button>
+                <button routerLink="/shop">see offers</button>
             </div>
             <img src="assets/image/main-page/sales.png" alt="">
         </div>
     </div>
 </section>
 <section class="list-cards">
-    <div class="container">
-        <app-list-items></app-list-items>
+    <div class="container list-cards__container">
+        <div class="params" *ngIf="loading$|async"></div>
+        <div class="show-cards">
+            <app-list-items  [quatityCards]="quatityCards"></app-list-items>
+            <div *ngIf="loading$|async" class="btn__load__more"><button routerLink="/shop">Load more</button></div>
+        </div>
     </div>
+
 </section>
+<!-- [style.background-color]="'red'" -->

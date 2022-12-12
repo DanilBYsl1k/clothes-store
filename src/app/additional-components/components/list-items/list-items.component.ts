@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { getCardsAction } from '../../reduce/action/getCartAction';
@@ -12,8 +12,8 @@ import { Icard } from '../../types/Cards.interface';
   styleUrls: ['./list-items.component.scss']
 })
 export class ListItemsComponent implements OnInit {
-
   constructor(private store:Store, private service:GetCardsService) { }
+  @Input()quatityCards:number
   cardsList$:Observable<Icard[]>=this.store.select(itemSelector)
   ngOnInit(): void {
     this.initialization()
